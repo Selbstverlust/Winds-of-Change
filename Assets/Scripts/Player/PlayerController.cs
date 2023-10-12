@@ -7,6 +7,12 @@ public class PlayerController : MonoBehaviour {
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private Camera _camera;
+
+    private bool _facingLeft;
+    public bool facingLeft {
+        get => _facingLeft;
+        set => _facingLeft = value;
+    }
     
     private Vector2 _movement;
     [SerializeField] private float moveSpeed = 1f;
@@ -53,5 +59,7 @@ public class PlayerController : MonoBehaviour {
         var mousePos = Input.mousePosition;
         var playerScreenPoint = _camera.WorldToScreenPoint(transform.position);
         _spriteRenderer.flipX = mousePos.x < playerScreenPoint.x;
+        _facingLeft = mousePos.x < playerScreenPoint.x;
+        
     }
 }
