@@ -67,8 +67,10 @@ public class Sword : MonoBehaviour {
     private void MouseFollowWithOffset() {
         var mousePos = Input.mousePosition;
         var playerScreenPoint = _camera.WorldToScreenPoint(_playerController.transform.position);
+
+        var angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         
-        _activeWeapon.transform.rotation = mousePos.x < playerScreenPoint.x ? Quaternion.Euler(0, -180, 0) : Quaternion.Euler(0, 0, 0);
+        _activeWeapon.transform.rotation = mousePos.x < playerScreenPoint.x ? Quaternion.Euler(0, -180, angle) : Quaternion.Euler(0, 0, angle);
         weaponCollider.transform.rotation = mousePos.x < playerScreenPoint.x ? Quaternion.Euler(0, -180, 0) : Quaternion.Euler(0, 0, 0);
     }
 }

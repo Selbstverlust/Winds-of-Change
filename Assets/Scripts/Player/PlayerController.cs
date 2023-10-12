@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+    public static PlayerController Instance;
     private PlayerControls _playerControls;
     private Rigidbody2D _rb;
     private Animator _animator;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Awake() {
         // Assigns variables on Awake.
+        Instance = this;
         _camera = Camera.main;
         _playerControls = new PlayerControls();
         _rb = GetComponent<Rigidbody2D>();

@@ -7,15 +7,15 @@ public class EnemyPathfinding : MonoBehaviour {
     
     private Rigidbody2D _rb;
     private SpriteRenderer _spriteRenderer;
-    private EnemyAI _enemyAI;
+    private KnockbackBehaviour _knockbackBehaviour;
         
     private Vector2 _movement;
     [SerializeField] private float moveSpeed = 1f;
     
     private void Awake() {
         _rb = GetComponent<Rigidbody2D>();
+        _knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _enemyAI = GetComponent<EnemyAI>();
     }
 
     private void FixedUpdate() {
@@ -24,6 +24,8 @@ public class EnemyPathfinding : MonoBehaviour {
     }
 
     private void Move() {
+        if (_knockbackBehaviour.gettingKnockedBack) { return; }
+        
         _rb.MovePosition(_rb.position + _movement * (moveSpeed * Time.fixedDeltaTime));
     }
 
