@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour {
+    [SerializeField] private float roamFloatTimer = 2f;
     private enum State {
         Roaming
     }
@@ -25,7 +26,7 @@ public class EnemyAI : MonoBehaviour {
         while (_state == State.Roaming) {
             var roamPosition = GetRoamingPosition();
             _enemyPathfinding.MoveTo(roamPosition);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(roamFloatTimer);
         }
     }
 
