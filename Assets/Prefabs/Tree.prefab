@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2383826345296743327}
   - component: {fileID: 1942346255577668893}
   - component: {fileID: 8627155920915612519}
+  - component: {fileID: 8313722422705070817}
+  - component: {fileID: 1156246739399629662}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -31,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1942346255577668893
 SpriteRenderer:
@@ -120,3 +122,74 @@ CapsuleCollider2D:
   m_Offset: {x: -0.000034054898, y: 0.07685421}
   m_Size: {x: 0.62510735, y: 0.52370775}
   m_Direction: 1
+--- !u!114 &8313722422705070817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5721486669540915526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7294a05bc4181ea4c9b929577f9b7358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transparencyValue: 0.8
+  fadeTime: 0.4
+--- !u!60 &1156246739399629662
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5721486669540915526}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.27}
+    oldSize: {x: 3, y: 3}
+    newSize: {x: 3, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.44094372, y: 1.9663382}
+      - {x: -0.9375844, y: 1.6373237}
+      - {x: -1.1873055, y: 1.2434714}
+      - {x: -1.1875284, y: 0.68991554}
+      - {x: -0.87392616, y: 0.30642605}
+      - {x: -0.41776752, y: 0.08464754}
+      - {x: 0.34869003, y: 0.07149255}
+      - {x: 0.8817954, y: 0.31005025}
+      - {x: 1.2138381, y: 0.7030984}
+      - {x: 1.1941056, y: 1.2525564}
+      - {x: 0.94089603, y: 1.6123989}
+      - {x: 0.43428183, y: 1.9466057}
+  m_UseDelaunayMesh: 0

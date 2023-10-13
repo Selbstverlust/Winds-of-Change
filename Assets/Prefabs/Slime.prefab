@@ -38,7 +38,7 @@ Transform:
   m_Children:
   - {fileID: 1526211781911012826}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &867059834713755599
 SpriteRenderer:
@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2224b7eaae49ffc46a7c34a9b43c695a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roamFloatTimer: 2
 --- !u!114 &2200164046630692290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +193,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
-  deathVFXPrefab: {fileID: 259952420748760771, guid: f3eb7266fdc4ab84d9dde6a68cfe7e59, type: 3}
+  deathVFXPrefab: {fileID: 4546177698692534265, guid: 82cdabda03a898244911e03ac086c132, type: 3}
+  knockbackValue: 15
 --- !u!114 &6191198468207188094
 MonoBehaviour:
   m_ObjectHideFlags: 0
