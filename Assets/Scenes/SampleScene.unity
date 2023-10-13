@@ -295,6 +295,7 @@ MonoBehaviour:
   slashAnimationObject: {fileID: 1031360674875411064, guid: 2952869d3dc0691459651385cbf81b0f, type: 3}
   slashAnimationSpawnPoint: {fileID: 332435373}
   weaponCollider: {fileID: 1618970266}
+  swordCooldown: 0.5
 --- !u!95 &161110074
 Animator:
   serializedVersion: 5
