@@ -21,13 +21,11 @@ public class Sword : MonoBehaviour {
     private Animator _animator;
     private PlayerController _playerController;
     private ActiveWeapon _activeWeapon;
-    private Camera _camera;
     private void Awake() {
         _playerControls = new PlayerControls();
         _animator = GetComponent<Animator>();
         _playerController = GetComponentInParent<PlayerController>();
         _activeWeapon = GetComponentInParent<ActiveWeapon>();
-        _camera = Camera.main;
     }
     
     private void OnEnable() {
@@ -91,7 +89,7 @@ public class Sword : MonoBehaviour {
 
     private void MouseFollowWithOffset() {
         var mousePos = Input.mousePosition;
-        var playerScreenPoint = _camera.WorldToScreenPoint(_playerController.transform.position);
+        var playerScreenPoint = Camera.main.WorldToScreenPoint(_playerController.transform.position);
 
         var angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         

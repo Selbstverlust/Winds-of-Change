@@ -3,13 +3,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class PlayerController : MonoBehaviour {
-    public static PlayerController Instance;
+public class PlayerController : Singleton<PlayerController> {
     private PlayerControls _playerControls;
     private Rigidbody2D _rb;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
-    private Camera _camera;
     private float _defaultMoveSpeed;
     
     [SerializeField] private TrailRenderer trailRenderer;
@@ -29,10 +27,9 @@ public class PlayerController : MonoBehaviour {
     private static readonly int MoveY = Animator.StringToHash("moveY");
     
 
-    private void Awake() {
+    protected override void Awake() {
+        base.Awake();
         // Assigns variables on Awake.
-        Instance = this;
-        _camera = Camera.main;
         _playerControls = new PlayerControls();
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
@@ -87,7 +84,7 @@ public class PlayerController : MonoBehaviour {
 
     private void AdjustPlayerFacingDirection() {
         var mousePos = Input.mousePosition;
-        var playerScreenPoint = _camera.WorldToScreenPoint(transform.position);
+        var playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
         _spriteRenderer.flipX = mousePos.x < playerScreenPoint.x;
         _facingLeft = mousePos.x < playerScreenPoint.x;
         

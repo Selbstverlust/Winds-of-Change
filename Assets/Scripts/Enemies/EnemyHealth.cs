@@ -20,7 +20,7 @@ public class EnemyHealth : MonoBehaviour {
 
     public void TakeDamage(int damage) {
         _currentHealth -= damage;
-        _knockbackBehaviour.GetKnockedBack(PlayerController.Instance.transform, knockbackValue);
+        _knockbackBehaviour.GetKnockedBack(PlayerController.instance.transform, knockbackValue);
         _flashBehaviour.FlashSprite();
         StartCoroutine(WaitForFlash());
     }

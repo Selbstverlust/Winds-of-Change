@@ -1,0 +1,1 @@
+public class SingletonBehaviour : Singleton<SingletonBehaviour> { }
