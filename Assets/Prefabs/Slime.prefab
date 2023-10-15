@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3632916255789468659}
   - component: {fileID: 6191198468207188094}
   - component: {fileID: 7325415087578335741}
+  - component: {fileID: 2371837992677015484}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -222,6 +223,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whiteFlashMaterial: {fileID: 2100000, guid: d8a15cf781aca4d4e8f650bdf95df71b, type: 2}
   flashTime: 0.2
+--- !u!95 &2371837992677015484
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745670466059613441}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2c154c6c27d48c9488ca9baf4aedc5dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5925235850846647750
 GameObject:
   m_ObjectHideFlags: 0

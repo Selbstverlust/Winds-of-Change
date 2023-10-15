@@ -11,6 +11,9 @@ public class PlayerController : Singleton<PlayerController> {
     private float _defaultMoveSpeed;
     
     [SerializeField] private TrailRenderer trailRenderer;
+    [SerializeField] private Transform weaponCollider;
+    [SerializeField] private Transform slashAnimationSpawnPoint;
+
 
     private bool _isDashing;
     private bool _facingLeft;
@@ -54,6 +57,13 @@ public class PlayerController : Singleton<PlayerController> {
         AdjustPlayerFacingDirection();
     }
 
+    public Transform GetWeaponCollider() {
+        return weaponCollider;
+    }
+    public Transform GetSlashSpawnPoint() {
+        return slashAnimationSpawnPoint;
+    }
+    
     private void PlayerInput() {
         _movement = _playerControls.Movement.Move.ReadValue<Vector2>();
         
