@@ -8,13 +8,13 @@ public class PlayerController : Singleton<PlayerController> {
     private Rigidbody2D _rb;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
-    private float _defaultMoveSpeed;
+    private KnockbackBehaviour _knockback;
     
     [SerializeField] private TrailRenderer trailRenderer;
     [SerializeField] private Transform weaponCollider;
     [SerializeField] private Transform slashAnimationSpawnPoint;
 
-
+    private float _defaultMoveSpeed;
     private bool _isDashing;
     private bool _facingLeft;
     public bool facingLeft { get => _facingLeft; }
@@ -37,6 +37,7 @@ public class PlayerController : Singleton<PlayerController> {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _knockback = GetComponent<KnockbackBehaviour>();
     }
 
     private void Start() {
@@ -72,6 +73,8 @@ public class PlayerController : Singleton<PlayerController> {
     }
 
     private void Move() {
+        if (_knockback.gettingKnockedBack) return;
+        
         _rb.MovePosition(_rb.position + _movement * (moveSpeed * Time.fixedDeltaTime));
     }
 

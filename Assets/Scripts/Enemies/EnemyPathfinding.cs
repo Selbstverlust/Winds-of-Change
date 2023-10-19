@@ -33,6 +33,10 @@ public class EnemyPathfinding : MonoBehaviour {
         _movement = targetPosition;
     }
 
+    public void StopMoving() {
+        _movement = Vector3.zero;
+    }
+
     private void AdjustSpriteDirection() {
         _spriteRenderer.flipX = _movement.x < Mathf.Epsilon;
     }
